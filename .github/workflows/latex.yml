@@ -1,0 +1,44 @@
+name: Build and Commit LaTeX Papers
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install full TeX Live (with biblatex/biber and extra packages)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-full latexmk biber
+
+      - name: Compile all papers
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: |
+            papers/*/main.tex
+          latexmk_use_lualatex: false
+          latexmk_shell_escape: true
+
+      - name: Upload PDFs as artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: compiled-pdfs
+          path: papers/*/main.pdf
+
+      - name: Commit compiled PDFs back to repo
+        if: github.event_name == 'push' # only commit on pushes, not PRs
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add papers/*/main.pdf
+          git commit -m "Update compiled PDFs [skip ci]" || echo "No changes to commit"
+          git push
+
