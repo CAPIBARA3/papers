@@ -1,0 +1,600 @@
+%% Beginning of file 'sample7.tex'
+%%
+%% Version 7. Created January 2025.  
+%%
+%% AASTeX v7 calls the following external packages:
+%% times, hyperref, ifthen, hyphens, longtable, xcolor, 
+%% bookmarks, array, rotating, ulem, and lineno 
+%%
+%% RevTeX is no longer used in AASTeX v7.
+%%
+\documentclass[twocolumn]{aastex7}
+
+% Bibliography
+\usepackage{biblatex} 
+\addbibresource{references.bib}
+\addbibresource{sample7.bib}
+
+\usepackage{pgfgantt}
+
+%%
+%% This initial command takes arguments that can be used to easily modify 
+%% the output of the compiled manuscript. Any combination of arguments can be 
+%% invoked like this:
+%%
+%% \documentclass[argument1,argument2,argument3,...]{aastex7}
+%%
+%% Six of the arguments are typestting options. They are:
+%%
+%%  twocolumn   : two text columns, 10 point font, single spaced article.
+%%                This is the most compact and represent the final published
+%%                derived PDF copy of the accepted manuscript from the publisher
+%%  default     : one text column, 10 point font, single spaced (default).
+%%  manuscript  : one text column, 12 point font, double spaced article.
+%%  preprint    : one text column, 12 point font, single spaced article.  
+%%  preprint2   : two text columns, 12 point font, single spaced article.
+%%  modern      : a stylish, single text column, 12 point font, article with
+%% 		  wider left and right margins. This uses the Daniel
+%% 		  Foreman-Mackey and David Hogg design.
+%%
+%% Note that you can submit to the AAS Journals in any of these 6 styles.
+%%
+%% There are other optional arguments one can invoke to allow other stylistic
+%% actions. The available options are:
+%%
+%%   astrosymb    : Loads Astrosymb font and define \astrocommands. 
+%%   tighten      : Makes baselineskip slightly smaller, only works with 
+%%                  the twocolumn substyle.
+%%   times        : uses times font instead of the default.
+%%   linenumbers  : turn on linenumbering. Note this is mandatory for AAS
+%%                  Journal submissions and revisions.
+%%   trackchanges : Shows added text in bold.
+%%   longauthor   : Do not use the more compressed footnote style (default) for 
+%%                  the author/collaboration/affiliations. Instead print all
+%%                  affiliation information after each name. Creates a much 
+%%                  longer author list but may be desirable for short 
+%%                  author papers.
+%% twocolappendix : make 2 column appendix.
+%%   anonymous    : Do not show the authors, affiliations, acknowledgments,
+%%                  and author contributions for dual anonymous review.
+%%  resetfootnote : Reset footnotes to 1 in the body of the manuscript.
+%%                  Useful when there are a lot of authors and affiliations
+%%		    in the front matter.
+%%   longbib      : Print article titles in the references. This option
+%% 		    is mandatory for PSJ manuscripts.
+%%
+%% Since v6, AASTeX has included \hyperref support. While we have built in 
+%% specific %% defaults into the classfile you can manually override them 
+%% with the \hypersetup command. For example,
+%%
+%% \hypersetup{linkcolor=red,citecolor=green,filecolor=cyan,urlcolor=magenta}
+%%
+%% will change the color of the internal links to red, the links to the
+%% bibliography to green, the file links to cyan, and the external links to
+%% magenta. Additional information on \hyperref options can be found here:
+%% https://www.tug.org/applications/hyperref/manual.html#x1-40003
+%%
+%% The "bookmarks" has been changed to "true" in hyperref
+%% to improve the accessibility of the compiled pdf file.
+%%
+%% If you want to create your own macros, you can do so
+%% using \newcommand. Your macros should appear before
+%% the \begin{document} command.
+%%
+\newcommand{\vdag}{(v)^\dagger}
+\newcommand\aastex{AAS\TeX}
+\newcommand\latex{La\TeX}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% The following section outlines numerous optional output that
+%% can be displayed in the front matter or as running meta-data.
+%%
+%% Running header information. A short title on odd pages and 
+%% short author list on even pages. Note that this
+%% information may be modified in production.
+%%\shorttitle{AASTeX v7 Sample article}
+%%\shortauthors{The Terra Mater collaboration}
+%%
+%% Include dates for submitted, revised, and accepted.
+%%\received{February 1, 2025}
+%%\revised{March 1, 2025}
+%%\accepted{\today}
+%%
+%% Indicate AAS Journal the manuscript was submitted to.
+%%\submitjournal{PSJ}
+%% Note that this command adds "Submitted to " the argument.
+%%
+%% You can add a light gray and diagonal water-mark to the first page 
+%% with this command:
+%% \watermark{text}
+%% where "text", e.g. DRAFT, is the text to appear.  If the text is 
+%% long you can control the water-mark size with:
+%% \setwatermarkfontsize{dimension}
+%% where dimension is any recognized LaTeX dimension, e.g. pt, in, etc.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Use this command to indicate a subdirectory where figures are located.
+%%\graphicspath{{./}{figures/}}
+%% This is the end of the preamble.  Indicate the beginning of the
+%% manuscript itself with \begin{document}.
+
+\begin{document}
+\title{Mission Concept Documentation (MCD) of CAPIBARA’s Gamma-/X-ray Mission CAPIGX}
+
+%% A significant change from AASTeX v6+ is in the author blocks. Now an email
+%% address is required for each author. This means that each author requires
+%% at least one of the following:
+%%
+%% \author
+%% \affiliation
+%% \email
+%%
+%% If these three commands are not available for each author, the latex
+%% compiler will issue an error and if you force the latex compiler to continue,
+%% it will generate an incomplete pdf.
+%%
+%% Multiple \affiliation commands are allowed and authors can also include
+%% an optional \altaffiliation to indicate a status, i.e. Hubble Fellow. 
+%% while affiliations are indexed as footnotes, altaffiliations are noted with
+%% with a non-numeric footnote that is set away from the numeric \affiliation 
+%% footnotes. NOTE that if an \altaffiliation command is used it must 
+%% come BEFORE the \affiliation call, right after the \author command, in 
+%% order to place the footnotes in the proper location. Because non-numeric
+%% symbols are used, \altaffiliation should be used sparingly.
+%%
+%% In v7 the \author command takes an optional argument which provides 
+%% additional metadata about the author. Authors can provide the 16 digit 
+%% ORCID, the surname (family or last) name, the given (first or fore-) name, 
+%% and a name suffix, e.g. "Jr.". The syntax is:
+%%
+%% \author[orcid=0000-0002-9072-1121,gname=Gregory,sname=Schwarz]{Greg Schwarz}
+%%
+%% This name metadata in not shown, it is only for parsing by the peer review
+%% system so authors can be more easily identified. This name information will
+%% also be sent to the publisher so they can include it in the CROSSREF 
+%% metadata. Including an orcid will hyperlink the author name to the 
+%% author's ORCID page. Note that  during compilation, LaTeX will do some 
+%% limited checking of the format of the ID to make sure it is valid. If 
+%% the "orcid-ID.png" image file is  present or in the LaTeX pathway, the 
+%% ORCID icon will appear next to the authors name.
+%%
+%% Even though emails are now required for each author, the \email does not
+%% produce output in the compiled manuscript unless the optional "show" command
+%% is used. For example,
+%%
+%% \email[show]{greg.schwarz@aas.org}
+%%
+%% All "shown" emails are show in the bottom left of the first page. Due to
+%% space constraints, only a few emails should be shown. 
+%%
+%% To identify a corresponding author, use the \correspondingauthor command.
+%% The command appends "Corresponding Author: " to the argument it appears at
+%% the bottom left of the first page like the output from \email. 
+
+\author[orcid=0009-0009-2859-0974,sname='Alcaide-Núñez']{Joan Alcaide-Núñez}
+\affiliation{Fakultät für Physik, Ludwig-Maximilians-Universität München, Geschwister-Scholl-Platz 1, 80539 Munich, Germany}
+\email[show]{capigx.capibara@outlook.com}
+
+\collaboration{all}{CAPIBARA Collaboration\footnote{Collaboration for the Analysis of Photonic and Ionic Bursts\\ and Radiation}}
+
+%% Use the \collaboration command to identify collaborations. This command
+%% takes an optional argument that is either a number or the word "all"
+%% which tells the compiler how many of the authors above the command to
+%% show. For example "\collaboration[all]{(DELVE Collaboration)}" wil include
+%% all the authors above this command.
+%%
+%% Mark off the abstract in the ``abstract'' environment. 
+\begin{abstract}
+
+Outline: \textit{Here's the problem, here's the opportunity, here's our solution, and here's how we get there.}
+
+\end{abstract}
+
+%% Keywords should appear after the \end{abstract} command. 
+%% The AAS Journals now uses Unified Astronomy Thesaurus (UAT) concepts:
+%% https://astrothesaurus.org
+%% You will be asked to selected these concepts during the submission process
+%% but this old "keyword" functionality is maintained in case authors want
+%% to include these concepts in their preprints.
+%%
+%% You can use the \uat command to link your UAT concepts back its source.
+\keywords{\uat{High Energy astrophysics}{739}}
+
+%% From the front matter, we move on to the body of the paper.
+%% Sections are demarcated by \section and \subsection, respectively.
+%% Observe the use of the LaTeX \label
+%% command after the \subsection to give a symbolic KEY to the
+%% subsection for cross-referencing in a \ref command.
+%% You can use LaTeX's \ref and \label commands to keep track of
+%% cross-references to sections, equations, tables, and figures.
+%% That way, if you change the order of any elements, LaTeX will
+%% automatically renumber them.
+
+%-----------------------------------
+\section{Introduction and Motivation}\label{sec:introduction}
+We are heading to an era of multi-messenger astronomy, where electromagnetic (EM) observations, gravitational wave (GW) signals, and neutrino detections provide different channels or 'messengers' to explore the Universe. The high-energy domain of astrophysics is central to this new revolution in astrophysics, since the majority events detectable with multi-messenger methods are cataclysmic events like binary neutron star (BNS) or black hole (BH) mergers, BH accretion and relativistic jets.
+
+In the 2030s, many GW observatories as well as X-ray and $\gamma$-ray telescope will be going online. Both Einstein Telescope (ET) and ESA's Laser Interferometer Space Antenna (LISA) are expected to commission around 2035 \cite{Maggiore_2020} \cite{amaroseoane2017laserinterferometerspaceantenna}, while Cosmic Explorer will probably come a few years later \cite{evans2021horizonstudycosmicexplorer}. On the EM side, ESAs' flagship missions NewAthena (X-ray) and THESEUS ($\gamma$-ray) are planned to launch in 2037 \cite{Cruise_2024} and 2032 \cite{amati2021theseusspacemissionupdated} respectively.
+
+Despite this wide coverage of the high energy sky, there are still observational and strategic gaps that would affect the progress of scientific discovery, if not completely eliminate the possibility for some discoveries. This gap lies in the observations and follow-ups of high-energy transients like gamma-ray bursts (GRBs) or magnetar flares. New GW observatories will provide massive amounts of GW signals with possible EM counterparts, simulations project more than $10^4$ signals per year detectable by ET \cite{colombo2025multimessengerobservationseinsteintelescope}. and the until now presented X-ray and $\gamma$-ray telescope will not be able to follow-up such a great amount of observations. Additionally, flagship missions like THESEUS and NewAthena will have other parallel priorities alongside transient monitoring/follow-up, leading to not-detections of these high energy transients.
+
+We propose a new mission called CAPIGX which will monitor the sky for these transients and be available for follow-up of many phenomena providing EM data for GW events. CAPIGX is a mission planned and developed by the CAPIBARA\footnote{Collaboration for the Analysis of Photonic and Ionic Bursts and RAdiation} Collaboration, a fully student-led work group with the aim to explore the high energy cosmos \cite{capibara_y1_report}. The mission we propose consists of a constellation of 3 3U CubeSats which will enable great localization accuracy using intensity interferometry, the main feature of CAPIGX. In the following paper, we will go through the details, planning, and feasibility of this mission.
+
+%-----------------------------------
+\section{State of the Field}\label{sec:state_of_the_field}
+
+From the early 2000s, there still remain two flagship missions: FERMI ($\gamma$-ray) and Swift (X-ray), however these missions are planned to decommission in some years. Additional satellites have been launched since then, including Chandra (X-ray), NICER (X-ray), IXPE (X-ray), EP (X-ray), SVOM ($\gamma-ray$), and HERMES ($\gamma$-ray). Some of these do monitor for transient phenomena (e.g, Einstein Probe (EP) and SVOM), but other do observe other types of objects. For the 2030s, we can predict that only EP and SVOM will still be online in the X-ray and $\gamma$-ray range respectively. Both $\sim 10$ year old observatories will support the new 2030s fleet (THESEUS and NewAthena). HERMES is a CubeSat mission, with expected lifetime of $~5$ years, i.e. ending its mission in 2030. While other telescope may be also online during the early 2030s, they will probably provide lower quality scientific data and won't be as productive as they are now.
+
+\begin{figure*}
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/observatory_timeline.png}
+    \caption{Gantt diagram of the available high energy and GW observatories from the 2010s until 2040. Includes actual launch and mission end life as well as expectations for current and future missions. Dark colors indicate current or launched missions, while pastel colors stand for planned missions. Missions focusing on transient monitoring and follow-up are highlighted in blue, while green-shaded missions prioritize discrete object observations. We are not showing the COSI mission (MeV $\gamma$-ray range), since without being a high priority flagship mission of NASA and with the vast cuts in funding to the agency's budget will not see light in the foreseeable future.}
+    \label{fig:state}
+\end{figure*}
+
+As seen in figure \ref{fig:state}, while there is some existing coverage in the X-ray and $\gamma$-ray ranges, two key gaps remain in current and upcoming mission plans that need addressing:
+\begin{enumerate}
+    \item \textbf{Availability of transient detection across the keV to MeV range}: Currently, there are several missions observing in the X-ray and $\gamma$-ray domains, such as Fermi, Swift, and EP for X-rays, and Fermi, INTEGRAL, SVOM, and HERMES for $\gamma$-rays. While these provide some coverage, none offer the flexibility and precision needed for rapid follow-up and detailed localization of transient phenomena across this broad energy range. With the explosion in the number of gravitational wave (GW) signals expected from the next generation of GW detectors like Cosmic Explorer and Einstein Telescope, there is a critical need for a dedicated, agile system to detect and localize multi-messenger transients within the keV to MeV range.
+    
+    \item \textbf{Coverage gaps during the transition between 2020 and 2030}: There is a significant gap in terms of operational X-ray and $\gamma$-ray missions between the current wave of observatories (e.g., Fermi, Swift) and the next generation of high-energy telescopes expected in the 2030s, such as NewAthena and THESEUS. This period (from the early 2020s to the late 2030s) will see a lull in mission upgrades and new launches, leaving a critical period during which transient events may go undetected or poorly localized. This timing gap can be filled by an innovative and cost-effective solution, providing both continuity and new capabilities during this transitional phase.
+\end{enumerate}
+
+\textcolor{orange}{Add more specifications about the capabilities of the next generation telescopes. What will THESEUS and NewAthena focus on and their energy range/properties/capabilities? What's new about the next gen GW observatories?}
+
+%-----------------------------------
+\section{Scientific Objectives and Motivation}\label{sec:scientific_motivation}
+
+The scientific objectives of a high energy transient observing mission are many. With the help of intensity interferometry, we will be able to detect transients with arcminute-scale precision. The branches of modern astrophysical research that CAPIBARA will foster the most are the following:
+\begin{enumerate}
+    \item Multi-Messenger Astronomy: host galaxy identification
+    \item Early Universe, Early Star and GRB/AGN Population
+    \item Nature of high energy phenomena
+    \item Cosmology
+\end{enumerate}
+While some research initiatives are developed within the Collaboration\footnote{See \href{https://capibara3.github.io/capigx/index.html}{https://capibara3.github.io/capigx/index.html}}, we will publish the entirety of our data for international researchers to join in and be able to use our data.
+
+
+\subsection{Multi-Messenger Astronomy: host galaxy identification}\label{subsec:Multi-Messenger_Astronomy_host_galaxy_identification}
+Multi-messenger astronomy is not only a new research line but a new way of literally 'seeing' the Universe. For centuries, we have performed observations exclusively with telescopes, observing the light of distant worlds. However, in the last 30 years humankind has achieved to feel the Universe through different channels. In addition to traditional electromagnetic (EM) telescopes, neutrinos from outside the solar system were first detected in from SuperNova 1987 \cite{1987ESOC...26..219K} and the first gravitational wave detection was in 2015 \cite{PhysRevLett.116.061102}. Both events opening new paths for astronomy to explore, since these other 'messengers' provide different types of information about the sources we observe.
+
+The 2020 decadal survey set as a priority to invest in mission around MM astronomy.
+
+This research line comprises the \href{https://capibara3.github.io/capigx/multi-messenger-cosmology.html}{Multi-Messenger Cosmology} research initiative within the CAPIBARA Collaboration, in which we intend to combine GW signals and GRB counterpart observations to further constraint the cosmological parameters and trying to find an accurate cosmological model for the Universe.
+
+
+\subsection{Early Universe, Early Star and GRB/AGN Population}\label{subsec:Early_Universe_Early_Star_and_GRB/AGN _opulation}
+As CAPIGX's energy range extends through the X-ray (see section \ref{sec:mission_concept} it will be able to detect high-z transients, since this are considerably redshifted they are visible in the X-ray regime. Moreover, their high energy makes them visible at great distances, posing a great opportunity to studying the early Universe and its environment. The population, number, and properties of detected transients are directly related to the characteristics of stellar formation, population and death at the time. \cite{missing}
+
+\subsection{Nature of high energy phenomena}\label{subsec:Nature_of_high_energy_phenomena}
+The nature of high energy phenomena like the acceleration of particles to relativistic speeds \cite{missing}, the equation of state (EoS) of neutron stars (NS) or the engine of GRBs \cite{missing} are still being unknown or disputed. High energy transients are the most violent and powerful phenomena in the Universe, showing us the limits of physics and nature, like the BOAT event \cite{doi:10.1126/science.adj3638}. Thus, by detecting these extreme events promptly and performing follow-up observations in coordination with other observatories (space- and ground-based).
+
+This research line related to the \href{https://capibara3.github.io/capigx/agn-cosmic-ray-interactions.html}{AGN cosmic ray interactions} and \href{https://capibara3.github.io/capigx/supernova-remnant-environments.html}{SNR environments} research initiatives within the CAPIBARA Collaboration.
+
+\subsection{Cosmology}\label{subsec:Cosmology}
+The Hubble Tension or Crisis in Cosmology is the fact that different methods to compute the Hubble constant (the expansion rate of the Universe) deliver different results. While they where in agreement 20 year ago, the tension between both methods (distance ladder vs CMB) has done nothing but increase with advanced analysis techniques and more precise telescopes.
+
+Another way of exploring the properties of the Universe ($H_0$, $\Omega_m$, $\Omega_\text{de}$, ...) is to use the energy relations of GRBs, see \cite{Ghirlanda_2006} for a thoughtful review. Thus, building a vast catalog of high energy transient data will help to further constraint and learn both energy properties and relations of GRBs as well as cosmological parameters.
+
+This research line comprises the \href{https://capibara3.github.io/capigx/multi-messenger-cosmology.html}{Multi-Messenger Cosmology} research initiative within the CAPIBARA Collaboration, in which we intend to combine GW signals and GRB counterpart observations to further constraint the cosmological parameters and trying to find an accurate cosmological model for the Universe.
+
+
+\textcolor{orange}{mention TDEs and magnetar flares at some point}
+
+
+
+\noindent
+CAPIGX complements larger missions by being responsive, distributed, and cost-effective.
+
+%-----------------------------------
+\section{Mission Concept}\label{sec:mission_concept}
+
+To address the observational gap identified in section \ref{sec:state_of_the_field}, we propose a constellation of three CubeSats to enhance localization capabilities for high-energy transients. By deploying three small spacecraft in coordinated Low Earth Orbits (LEOs), the mission achieves redundancy, improved source localization, and host galaxy identification for multi-messenger events via triangulation.
+
+For two satellites separated by a baseline $B$, the difference in time of arrival (ToA) of a signal is
+
+\begin{equation}
+    \Delta t = \frac{B \cdot \hat{s}}{c},
+\end{equation}
+
+resulting in an angular localization error
+
+\begin{equation}
+    \delta \approx \frac{c \, \sigma_t}{B_\perp},
+\end{equation}
+
+where $B_\perp$ is the baseline component perpendicular to the source direction, and $\sigma_t$ is the timing uncertainty, $\sigma_t = \delta \theta B_\perp / c$. With a timing accuracy of $\lesssim 10\ \mathrm{\mu s}$ (triangulation) and a separation of $1000\ \mathrm{km}$, localization of $\sim 10\ \mathrm{arcmin}$ is achievable. Increasing timing precision to $\lesssim 1\ \mathrm{\mu s}$ (intensity interferometry) improves accuracy to $\sim 1\ \mathrm{arcmin}$.
+
+This concept leverages a modular, cost-effective CubeSat platform, using commercial bus components while enabling student-developed scientific payloads. The constellation is scalable: additional units can be integrated to enhance coverage or redundancy.
+
+\subsection{Spacecraft Platform}
+
+We plan a constellation of three 3U CubeSats (10$\times$10$\times$30 cm) to host the detectors, timing hardware, and supporting subsystems.
+
+\subsubsection{Payload (student-developed)}
+\begin{itemize}
+    \item X-ray detector ($1$–$150~\mathrm{keV}$)
+    \item Gamma-ray detector ($150$–$2000~\mathrm{keV}$)
+    \item Precision time-tagging electronics ($<1~\mathrm{\mu s}$)
+    \item GPS-disciplined oscillator and inter-satellite timing links
+\end{itemize}
+
+\subsubsection{Attitude Determination and Control System (ADCS)}
+\begin{itemize}
+    \item Reaction wheels
+    \item Gyroscopes
+    \item Star tracker
+    \item Magnetorquers (momentum dumping)
+\end{itemize}
+
+\subsubsection{Power Subsystem (EPS)}
+\begin{itemize}
+    \item Deployable solar panels compatible with detector field of view
+    \item Batteries
+    \item Power distribution and management electronics
+\end{itemize}
+
+\subsubsection{Onboard Data Handling (OBDH)}
+\begin{itemize}
+    \item Radiation-tolerant, redundant onboard computer
+    \item Data storage sufficient for high-rate transient logging
+    \item Event processing and filtering
+    \item Precision time synchronization module
+\end{itemize}
+
+\subsubsection{Communications}
+\begin{itemize}
+    \item UHF/VHF for telemetry and telecommand
+    \item S-band or X-band downlink for science data
+    \item Optional low-latency relay (e.g., Iridium, TDRSS) for rapid alerts
+\end{itemize}
+
+\subsubsection{Thermal Control}
+\begin{itemize}
+    \item Passive thermal coatings and radiators
+    \item Heaters for detector temperature stability
+\end{itemize}
+
+\subsubsection{Structure and Protection}
+\begin{itemize}
+    \item 3U CubeSat standard bus
+    \item Radiation shielding for detectors and electronics
+    \item Mechanical stability for detector alignment
+\end{itemize}
+
+The scientific payload is developed in-house, while the CubeSat bus is obtained from commercial providers. Engagement with vendors will begin in the upcoming months.
+
+\subsection{Constellation Architecture}
+\begin{itemize}
+    \item Three CubeSats in coordinated LEOs
+    \item Triangulation and intensity interferometry improve localization
+    \item Redundant design ensures mission continuity if a unit fails
+    \item Modular and scalable: new satellites can be added
+    \item Rapid alerts to the astronomical community for multi-wavelength and multi-messenger follow-up
+\end{itemize}
+
+\begin{itemize}
+    \item Spacecraft: 3U CubeSat per unit
+    \item Payload: dual detectors covering $1$–$150~\mathrm{keV}$ (X-ray) and $150$–$2000~\mathrm{keV}$ (gamma-ray)
+    \item Supporting subsystems: shielding, deployable solar panels, ADCS, communications
+    \item Strategy: off-the-shelf CubeSat bus; student-developed scientific payload
+\end{itemize}
+
+%-----------------------------------
+\section{Technical Feasibility and Heritage}\label{sec:technical_feasibility}
+\begin{itemize}
+    \item Feasibility within CubeSat constraints (power, telemetry, sensitivity, background suppression).
+    \item Heritage missions: BurstCube, HaloSat, CUTE, HERMES, CuSPED.
+    \item Detector technology: CZT or scintillator-based designs demonstrated in small satellites.
+    \item Alignment with the trend toward distributed astrophysics missions.
+\end{itemize}
+
+%-----------------------------------
+\section{Partnerships and Resources}\label{sec:partnerships}
+
+\subsection{Potential Industry Partners}
+\begin{itemize}
+    \item \textbf{EnduroSat} (Bulgaria): modular CubeSat buses, science-friendly.
+    \item \textbf{ISISpace} (Netherlands): strong ESA/university collaboration heritage.
+    \item \textbf{NanoAvionics} (Lithuania): reliable 3U–6U platforms.
+    \item \textbf{GomSpace} (Denmark): high-end, ESA-tested platforms.
+\end{itemize}
+
+\subsection{Academic and Institutional Partners}
+\begin{itemize}
+    \item ESA Education Office (\href{https://www.esa.int/Education/CubeSats_-_Fly_Your_Satellite}{Fly Your Satellite!}).
+    \item National space agencies (CNES, DLR, UKSA, ASI, etc.).
+    \item University laboratories for detector development and mission operations.
+\end{itemize}
+
+%-----------------------------------
+\section{Implementation Roadmap}\label{sec:implementation_roadmap}
+\begin{itemize}
+    \item \textbf{2025}: Feasibility study and MCD (this document).
+    \item \textbf{2026}: Payload design; industry partnership agreements.
+    \item \textbf{2027}: Application to ESA FlyYourSatellite! and/or other programs.
+    \item \textbf{2028–2032}: Development, integration, testing.
+    \item \textbf{2032–2035+}: Launch window; mission operations.
+    \item \textbf{2040}: End of mission; potential upgrade/expansion of constellation.
+\end{itemize}
+\noindent Emphasis on student-led character: training, education, and legacy.
+
+
+\begin{itemize}
+    \item \textbf{2025}: Feasibility study and MCD (this document).
+    \item \textbf{2026}: Payload design; industry partnership agreements.
+    \item \textbf{2027}: Application to ESA FlyYourSatellite! and/or other programs.
+    \item \textbf{2028–2032}: Development, integration, testing.
+    \item \textbf{2032–2035+}: Launch window; mission operations.
+    \item \textbf{2040}: End of mission; potential upgrade/expansion of constellation.
+\end{itemize}
+
+\noindent Emphasis on student-led character: training, education, and legacy.
+
+% Gantt diagram
+% \begin{ganttchart}[
+%     y unit chart=0.7cm,
+%     vgrid,
+%     hgrid,
+%     x unit=0.6cm,
+%     title height=1,
+%     bar height=0.6
+% ]{2025}{2040}
+%     \gantttitle{Year}{16} \\
+%     \gantttitlelist{2025,...,2040}{1} \\
+
+%     \ganttbar{Feasibility study / MCD}{2025}{2025} \\
+%     \ganttbar{Payload design / Industry partnerships}{2026}{2026} \\
+%     \ganttbar{Program Applications}{2027}{2027} \\
+%     \ganttbar{Development / Integration / Testing}{2028}{2032} \\
+%     \ganttbar{Launch / Mission Operations}{2032}{2035} \\
+%     \ganttbar{End of Mission / Constellation Upgrade}{2040}{2040} 
+% \end{ganttchart}
+
+
+%-----------------------------------
+\section{Funding Considerations}\label{sec:funding}
+\begin{itemize}
+    \item Estimated cost per 3U CubeSat: €0.8–1.2M (bus + launch + ops).
+    \item Primary sources: ESA Education, national agencies, university contributions.
+    \item Secondary sources: crowdfunding for outreach and small components.
+    \item Strategy: phased funding, linked to technical readiness and partnership milestones.
+\end{itemize}
+
+%-----------------------------------
+\section{Broader Impact and Legacy}\label{sec:impact}
+\begin{itemize}
+    \item \textbf{Educational}: training a new generation of astrophysicists and engineers.
+    \item \textbf{Scientific}: filling the observational gap in high-energy transient detection.
+    \item \textbf{Strategic}: pathfinder for distributed astrophysics missions.
+    \item \textbf{Long-term vision}: expandable student-led CubeSat network for multi-messenger astronomy.
+    \item Train the next generation of astrophysicists and engineers through a fully student-led mission.
+\end{itemize}
+
+%-----------------------------------
+\section{Conclusion}\label{sec:conclusion}
+\begin{itemize}
+    \item Restate the necessity of CAPIGX in the 2030s.
+    \item Emphasize the unique dual role: \textbf{scientific innovation + educational empowerment}.
+    \item A feasible, visionary step toward democratizing access to space-based astrophysics.
+\end{itemize}
+
+\textit{From mission concept:} This concept is based on a modular, cost-effective platform that holds commercial and accessible CubeSat technology while boosting the mission's scientific goals.
+
+\newpage
+
+\section{Software and third party data repository citations} \label{sec:cite}
+
+The code used to produce figure \ref{fig:state} can be found here \href{https://github.com/CAPIBARA3/capigx-obs-stats}{https://github.com/CAPIBARA3/capigx-obs-stats}.
+\newline
+
+The AAS Journals would like to encourage authors to change software and
+third party data repository references from the current standard of a
+footnote to a first class citation in the bibliography.  As a bibliographic
+citation these important references will be more easily captured and credit
+will be given to the appropriate people.
+
+The first step to making this happen is to have the data or software in
+a long term repository that has made these items available via a persistent
+identifier like a Digital Object Identifier (DOI).  A list of repositories
+that satisfy this criteria plus each one's pros and cons are given at \break
+\url{https://github.com/AASJournals/Tutorials/tree/master/Repositories}.
+
+In the bibliography the format for data or code follows this format: \\
+
+\noindent author year, title, version, publisher, prefix:identifier\\
+
+\citet{2015ApJ...805...23C} provides a example of how the citation in the
+article references the external code at
+\doi{10.5281/zenodo.15991}.  Unfortunately, bibtex does
+not have specific bibtex entries for these types of references so the
+``@misc'' type should be used.  The Repository tutorial explains how to
+code the ``@misc'' type correctly.  The most recent .bst file, aasjournalv7.bst, will output bibtex ``@misc'' type properly.
+
+Authors can also use the website \url{https://www.doi2bib.org/} to create a BIBTeX entry for any DOI. Please check the output from this site carefully as its output is only as good as the DOI metadata. Some DOI creators do not provide enough metadata to construct an adequate citation.
+
+%% Please use the acknowledgment and contribution environments. This will 
+%% be anonomyized when the "anonymous" style option is used. 
+\begin{acknowledgments}
+The work described and presented here is actively being working on by a collaboration of students, we are grateful for the insightful conversations with fellows. The author(s) of this paper would appreciate comments and suggestions, please each out to \href{https://capibara3.github.io/contact}{https://capibara3.github.io/contact}
+\end{acknowledgments}
+
+\begin{contribution}
+%%This section gives authors the space to recognize author contributions. The text inside this environment is NOT counted towards the total word quanta. At a minimum, manuscripts are expected to include this text:
+
+JAN came up with the mission concept and was responsible for the development of the feasibility study and the writing of this manuscript.
+
+%% But authors are expected to provide more specific details, e.g. 
+%%
+%%SC was responsible for writing and submitting the manuscript.
+%%WWM came up with the initial research concept and edited the manuscript.
+%%OTS obtained the funding and edited the manuscript.
+%%EBF provided the formal analysis and validation. He also edited the manuscript.
+%%GEH Supervised the undergraduates, wrote the software and administers the project github and Zenodo repositories.
+%%
+%% Authors can use the Contributor Role Taxonomy (CRediT) at
+%% https://credit.niso.org
+%% for ideas on how write a good statement tailored to their needs.
+
+\end{contribution}
+
+%% To help institutions obtain information on the effectiveness of their 
+%% telescopes the AAS Journals has created a group of keywords for telescope 
+%% facilities.
+%
+%% Following the acknowledgments section, use the following syntax and the
+%% \facility{} or \facilities{} macros to list the keywords of facilities used 
+%% in the research for the paper.  Each keyword is check against the master 
+%% list during copy editing.  Individual instruments can be provided in 
+%% parentheses, after the keyword, but they are not verified.
+% \facilities{HST(STIS), Swift(XRT and UVOT), AAVSO, CTIO:1.3m, CTIO:1.5m, CXO}
+
+%% Similar to \facility{}, there is the optional \software command to allow 
+%% authors a place to specify which programs were used during the creation of 
+%% the manuscript. Authors should list each code and include either a
+%% citation or url to the code inside ()s when available.
+\software{dataclasses, typing, matplotlib, numpy (from capigx_obs_stats}
+
+%% Appendix material should be preceded with a single \appendix command.
+%% There should be a \section command for each appendix. Mark appendix
+%% subsections with the same markup you use in the main body of the paper.
+%%
+%% Each Appendix (indicated with \section) will be lettered A, B, C, etc.
+%% The equation counter will reset when it encounters the \appendix
+%% command and will number appendix equations (A1), (A2), etc. The
+%% Figure and Table counter will not reset.
+
+\appendix
+
+\section{Appendix information}
+
+Appendices can be broken into separate sections just like in the main text.
+The only difference is that each appendix section is indexed by a letter
+(A, B, C, etc.) instead of a number.  Likewise numbered equations have
+the section letter appended.
+
+%% For this sample we use BibTeX plus aasjournalv7.bst to generate the
+%% the bibliography. The sample7.bib file was populated from ADS. To
+%% get the citations to show in the compiled file do the following:
+%%
+%% pdflatex sample7.tex
+%% bibtext sample7
+%% pdflatex sample7.tex
+%% pdflatex sample7.tex
+
+% \bibliography{references}{}
+% \bibliographystyle{aasjournalv7}
+
+\printbibliography
+
+%% This command is needed to show the entire author+affiliation list when
+%% the collaboration and author truncation commands are used.  It has to
+%% go at the end of the manuscript.
+%\allauthors
+
+%% Include this line if you are using the \added, \replaced, \deleted
+%% commands to see a summary list of all changes at the end of the article.
+%\listofchanges
+
+\end{document}
+
+% End of file `sample7.tex'.
