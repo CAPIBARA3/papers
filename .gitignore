@@ -3,9 +3,17 @@
 *.out
 *.bcf
 *.run.xml
+*.bbl
+*.blg
+*.fdb_latexmk
+*fls
 
 */*.aux
 */*.log
 */*.out
 */*.bcf
 */*.run.xml
+*/*.bbl
+*/*.blg
+*/*.fdb_latexmk
+*/*fls
