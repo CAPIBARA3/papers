@@ -1,13 +1,11 @@
 *.aux
 *.log
 *.out
-*.pdf
 *.bcf
 *.run.xml
 
 */*.aux
 */*.log
 */*.out
-*/*.pdf
 */*.bcf
 */*.run.xml
