@@ -1,20 +1,12 @@
-%% Beginning of file 'sample7.tex'
-%%
-%% Version 7. Created January 2025.  
-%%
-%% AASTeX v7 calls the following external packages:
-%% times, hyperref, ifthen, hyphens, longtable, xcolor, 
-%% bookmarks, array, rotating, ulem, and lineno 
-%%
-%% RevTeX is no longer used in AASTeX v7.
-%%
+
 \documentclass[twocolumn]{aastex7}
 
-% Bibliography
-\usepackage{biblatex} 
-\addbibresource{references.bib}
-\addbibresource{sample7.bib}
+% Bibliography: use BibTeX with the AAS journnal .bst provided in the repo
+% (replace previous biblatex configuration)
+% We'll use the provided aasjournalv7.bst; the bibliography is written
+% at the end of the document with \bibliographystyle and \bibliography.
 
+\usepackage{amsmath}
 \usepackage{pgfgantt}
 
 %%
@@ -552,7 +544,7 @@ JAN came up with the mission concept and was responsible for the development of 
 %% authors a place to specify which programs were used during the creation of 
 %% the manuscript. Authors should list each code and include either a
 %% citation or url to the code inside ()s when available.
-\software{dataclasses, typing, matplotlib, numpy (from capigx_obs_stats}
+\software{dataclasses, typing, matplotlib, numpy (from capigx\_obs\_stats)}
 
 %% Appendix material should be preceded with a single \appendix command.
 %% There should be a \section command for each appendix. Mark appendix
@@ -581,10 +573,13 @@ the section letter appended.
 %% pdflatex sample7.tex
 %% pdflatex sample7.tex
 
-% \bibliography{references}{}
-% \bibliographystyle{aasjournalv7}
-
-\printbibliography
+% Use BibTeX (aasjournalv7.bst) for the bibliography. Run:
+% pdflatex main.tex
+% bibtex main
+% pdflatex main.tex
+% pdflatex main.tex
+\bibliographystyle{aasjournalv7}
+\bibliography{references,sample7}
 
 %% This command is needed to show the entire author+affiliation list when
 %% the collaboration and author truncation commands are used.  It has to
