@@ -33,12 +33,12 @@ jobs:
           name: compiled-pdfs
           path: papers/*/main.pdf
 
-      - name: Commit compiled PDFs back to repo
-        if: github.event_name == 'push' # only commit on pushes, not PRs
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git add papers/*/main.pdf
-          git commit -m "Update compiled PDFs [skip ci]" || echo "No changes to commit"
-          git push
+      # - name: Commit compiled PDFs back to repo
+      #   if: github.event_name == 'push' # only commit on pushes, not PRs
+      #   run: |
+      #     git config --global user.name "GitHub Actions"
+      #     git config --global user.email "actions@github.com"
+      #     git add papers/*/main.pdf
+      #     git commit -m "Update compiled PDFs [skip ci]" || echo "No changes to commit"
+      #     git push
 
