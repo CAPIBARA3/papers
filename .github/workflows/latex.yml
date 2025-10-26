@@ -1,4 +1,6 @@
 name: Build and Commit LaTeX Papers
+permissions:
+  contents: read
 
 on:
   push:
