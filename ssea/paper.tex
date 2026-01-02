@@ -1,0 +1,66 @@
+\documentclass[11pt]{article}
+
+% --- Packages ---
+\usepackage{amsmath,amssymb}    % math symbols
+\usepackage{graphicx}           % figures
+\usepackage{array}              % tables
+\usepackage{booktabs}           % better tables
+\usepackage{geometry}           % page layout
+\usepackage{natbib}             % bibliography
+\usepackage{hyperref}           % clickable links
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cyan,
+    filecolor=magenta,      
+    urlcolor=blue,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+}
+\geometry{a4paper, margin=1in}
+
+\title{SSEA Paper CAPIBARA Collaboration}
+
+\author{
+author1\thanks{affiliation} \and
+author2 \and
+for the \textbf{CAPIBARA Collaboration}\footnote{Collaboration for the Analysis of Photonic and Ionic Bursts and RAdiation}}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+    This is our abstract.
+
+\end{abstract}
+
+\textbf{Keywords:} keyword1, keyword2, keyword3
+
+
+\section{Conclusion}\label{sec:conclusion}
+
+This is our Conclusion.
+
+\section*{Acknowledgments}
+
+We are grateful to the members of the CAPIBARA Collaboration for useful discussions and feedback. The CAPIBARA Collaboration is an international student initiative to explore the high energy universe. We thank the developers of the open-source tools used in this work. We welcome feedback and collaboration, please contact the corresponding author or visit our website: \href{https://capibara3.github.io/contact}{capibara3.github.io/contact}.
+
+\subsection*{Author Contributions}
+
+\textit{X.Y.Z contributed to the ... and ... sections. A.B.C. developed ... and ....}
+
+\subsection*{Code and Data Availability}
+
+\subsection*{Conflict of Interest}
+The authors declare no conflict of interest.
+
+% --- References ---
+% \bibliographystyle{plain}
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+
+\end{document}
