@@ -18,22 +18,16 @@
 }
 \geometry{a4paper, margin=1in}
 
-\title{SSEA Paper CAPIBARA Collaboration\\
-\textcolor{red}{depending on how much space figures/references take, we should aim for ~2500 words following the SSEA restrictions. WHen writing account for max 300 words per section, and max-max 400 words for sec 3 and 4 each}}
+\title{The CAPIBARA Collaboration}
 
 \author{
     Joan Alcaide-Núñez\thanks{Ludwig-Maximilians-Universität München (LMU), Munich, Germany} \and
     Lluc Soler Manich\thanks{Universitat Politècnica de Catalunya (UPC), Barcelona, Spain} \and
-    Carles Fonseca Maurí\thanks{University of California - Los Angeles, Los Angeles, USA} \and
-    Alessandro Sabia\thanks{affiliation} \and
-    Martina Solano Soto\thanks{affiliation} \and
+    Alessandro Sabia \and
+    Martina Solano Soto \and
     Rosa Bermejo Sabugo\thanks{Universidad de Salamanca (USal), Salamanca, Spain} \and
-    Hongda Zheng Xu\thanks{affiliation} \and
-    
-    % check before adding
-    % Martí Delgado Farriol\thanks{affiliation} \and
-    % Anna Abadal Garrido\thanks{affiliation} \and
-    % Marc 
+    Hongda Zheng Xu \and
+    Carles Fonseca Maurí\thanks{University of California - Los Angeles, Los Angeles, USA}
 }
 
 \date{\today}
@@ -44,105 +38,73 @@
 
 \begin{abstract}
 
-    This is our abstract.
+The world of astrophysics is constantly in evolution. The detection of the first gravitational-wave signal 10 years ago opened a new way of detecting the universe, making many open questions regarding the behaviour of gravity and high-energy, compact objects possible to investigate. The Collaboration for the Analysis of Photonic and Ionic Bursts and RAdiation (CAPIBARA Collaboration) is a group of ambitious young students (from high school to university) proposing and working on two projects to observe this side of the cosmos. Our Cosmic Ray Detector project and the COSMOS programme presented in this paper serve not only scientific objects but also have a major education impact.
 
 \end{abstract}
 
-\textbf{Keywords:} keyword1, keyword2, keyword3
+\textbf{Keywords:} Student CubeSat Missions, Multi-Messenger Astronomy, Cosmic Rays
 
 \section{Introduction}
 
-The landscape of modern space exploration is shifting toward more inclusive, decentralised models, where student-led missions serve as vital engines for both technical innovation and the cultivation of the next generation of space professionals. The rise of 
+The landscape of modern space exploration is shifting toward more inclusive, decentralised models, where student-led missions play vital roles in both technical innovation and the cultivation of the next generation of space professionals. The rise of CubeSats over the past decade has democratized space access, enabling students to gain early experience in space engineering and fostering new talents. For instance, 14 CubeSats have been launched by European students through ESA's FlyYourSatellite! Programme \cite{missing}, demonstrating the viability of student-developed space hardware.
 
-Why student-led missions matter
+The Collaboration for the Analysis of Photonic and Ionic Bursts And RAdiation (CAPIBARA Collaboration) is an international student-led initiative founded in summer 2024 with the goal of exploring the high-energy universe. Our members are high school and undergraduate students, creating a unique educational environment where participants can test their interests and skills while contributing to the project. With students at the centre, we are seeking advisors across academia and industry to provide informal mentorship and guidance.
 
-What CAPIBARA is (scope, student-led philosophy, advisors' and partnerships' role)
+In August 2017, the detection of GW170817 demonstrated the transformative potential of coordinated gravitational wave and electromagnetic observations \cite{missing}. Next-generation facilities like Einstein Telescope and LISA will detect hundreds to thousands of gravitational wave events annually \cite{missing}, creating an unprecedented demand for rapid electromagnetic counterpart identification. Presently, high-energy monitoring capabilities rely on aging assets like \textit{Fermi} and \textit{Swift}, with a critical observational gap emerging in the early 2030s.
 
-High-energy astrophysics as principal goal
-
-multiple missions to pursue that goal
-
-The landscape of modern space exploration is shifting toward more inclusive, decentralised models, where student-led missions play relevant roles in both technical innovation and the cultivation of the next generation of space professionals. The rise of CubeSats in the decade as enablers of space-access for student-led missions is allowing for students to get early experience and expertise in space engineering, fostering new talents. For instance, the 14 CubeSats have been launched by students from Europe via the European Space Agency’s (ESA) FlyYourSatellite! Programme (FYS).
-
-The Collaboration for the Analysis of Photonic and Ionic Bursts And RAdiation (CAPIBARA Collaboration) is a group of students, consisting of high school and undergraduate students for now, with the goal to explore the high energy cosmos in every aspect. The educational aim of CAPIBARA is to foster early interests and talents creating a community to both test one’s interests and skills and contribute to real-world science.
-
-To pursue our goals we separated them into two aspects: ionic and photonic detections, and the following that two missions, each of them with increasing complexity and ambition.
-
-
-\section{The CAPIBARA Collaboration Framework}
-
-advisors as mentors not mission leader
-
-full student-led but distributed and organised model
-mission-based participation
-
-allows students to engage with real-world science/engineering and to test their skills and interests
-
-progressive increase in mission complexity, early missions validate, later missions expand ambition and collaboration
-
-The key features of the CAPIBARA Collaboration are (+or- summary):
-Open science/access basis
-Open to every students (from high school to graduate students)
-But only students, advisors and partners are mentors to us not leaders
-Learn by doing and learn by sharing
-Dual goals, dual mission
-
+To address both this scientific need and our educational mission, CAPIBARA pursues two complementary programs: a Cosmic Ray Detector (CRD) for particle physics, and the Constellation of Student-Made Observing CubeSats (COSMOS) for space-based transient astronomy. This dual approach allows students to progress from simpler instrumentation to increasingly complex space missions, building expertise incrementally while maximizing scientific impact.
 
 \section{Cosmic Ray Detector}
 
-objectives and scientific rationale
+The goal of the Cosmic Ray Detector (CAPICR) is to detect and study the flux and energy spectrum of primary cosmic rays (CRs): charged, highly energetic particles with relativistic speeds coming from outer space or the Sun. These rays get blocked by Earth’s atmosphere. Therefore, to overcome this limitation, we aim to insert our CR detector into orbit.
 
-detector overview (principle, challenges, expected outcome)
+An ambitious goal that we plan to achive thanks to the partnership with OBA Space, which will deploy our CubeSat as a payload on OAB FARADAY.
 
-status
+Given that the detector will be hosted in a CubeSat, we have optimised it for a small space. It consists of a 60 mm cube that has three compartments. The top one will host the plastic scintillator, which is connected to the silicon photomultiplier (SiPM), the central compartment will hold the electrical circuit. Lastly, in the bottom compartment, we will keep the batteries and the memory storage needed.
 
-\section{C...O...S...M...O...S...}
+When a charged particle passes through the scintillator, its atoms are excited; as they return to the normal state, some photons are emitted. The photons will then be collected by a Silicon Photomultiplier (SiPM), which will transform the collection into a peak of voltage to allow us to detect the event. We do not have any control over the direction of photons emitted by the scintillator; therefore, we need to redirect them to the SiPM, by making the chamber fully reflective, we allow the photons to bounce off the walls until they get collected by it. To achive this the detector will be built of metal (likely aluminium)
 
-\textbf{Purpose is to define our vision for Duo and Net and invite SSEA community members (across academia, industry and research) to become mentors}
+Initially, the detector will focus on photon count, i.e., we won’t address the energy or the charge of the CRs yet. This helps us to understand how different orientations affect the CR ratio of detection. Moreover, we intend to send two identical detectors, which will be aligned with some separation between them. This will allow us to better determine the direction from which the CRs come and the speed at which these CRs travel, as we will know the distance between detectors and the difference in detection time.  %how will we mesure this time difference ? 
 
-Building upon the heritage of past missions, the COSMOS program represents the long-term strategic vision of CAPIBARA, aiming to bridge the gap in high-energy data availability throughout the 2030s through a phased multi-platform mission architecture.
+Currently we are working on the detector 3D model %something more to add?
+with guidance and technical support from PLD Space's SPARK program along side OBA Space.
 
-scientific rationale and phased evolution
+\section{Constellation of Student-Made Observing CubeSats (COSMOS)}
 
-leverage heritage missions and integrate into a gap for the 2030s
+The COSMOS program represents CAPIBARA's long-term strategic vision, aiming to bridge a critical observational gap in high-energy astrophysics throughout the 2030s. The scientific rationale centers on detecting and rapidly localizing high-energy transient events—particularly gamma-ray bursts (GRBs) and electromagnetic counterparts to gravitational wave sources.
 
-grow with new membesr and advisors
+\subsection*{Scientific Motivation}
 
+Next-generation gravitational wave observatories (Einstein Telescope, LISA, Cosmic Explorer) will detect hundreds to thousands of events annually, but localizing these sources requires electromagnetic counterparts. High-energy transients like GRBs provide crucial early detection, as they begin with brief gamma-ray/X-ray emission before evolving to longer wavelengths. Rapid, precise localization enables follow-up observations for host galaxy identification (essential for redshift measurements), jet physics studies, and multi-messenger correlation.
 
-In order to fulfil CAPIBARA’s goal to observe the high-energy universe in gamma-rays and X-rays (high energy electromagnetic spectrum) we have envisioned the COSMOS program as our long-term aim into the next decade. COSMOS, with its phased approach, aims to contribute to high-energy transient events observations and localisation of those events. These localisations would provide vital information for follow-ups in other electromagnetic (EM) wavelengths (X-ray, IR, optical, radio) as well as other ‘messengers’, i.e. gravitational waves signals (GW) and neutrino detections by other observatories both space- and ground-based.
+Current capabilities face a coverage gap: \textit{Swift} and \textit{Fermi} are starting to become obsolete, and while missions like SVOM and HERMES provide some coverage, no existing or firmly planned mission combines continuous all-sky monitoring with arcminute-level localization and a scalable, sustainable architecture for the 2030s.
 
-We are currently exploring this project as a constellation of small CubeSat observatories. When multiple satellites observe the same event, their positions and measurements can be used to further localise the event’s coordinates. This principle was already proven by the interplanetary network (IPN) and the general coordinates network (GCN) and more recently being also explored by the HERMES pathfinder mission.
+\subsection*{Phased Mission Architecture}
 
-CAPIBARA aims to leverage the high-energy detector heritage by past CubeSat missions such as EIRSAT-1, HERMES and BurstCube. Our intention is to implement flight-proven detector technology to 
+COSMOS follows a three-phase development strategy. \textbf{Phase 0 (2024-2026)} focuses on collaboration infrastructure, field study, and documentation, culminating in our SSEA 2026 presentation and Mission Concept Document. \textbf{Phase 1: COSMOS-Twin (2026-2032)} deploys two 3-6U CubeSats to demonstrate time-delay localization. Using GPS-synchronized clocks ($\sim$100 ns accuracy), the satellites detect the same transient and compare arrival times to constrain source position along a hyperbolic region on the celestial sphere. Twin will measure $\sim$10 bright GRBs, validating the localization technique and building flight experience. Launch is planned via ESA's FYS! program or commercial rideshare.
 
+\textbf{Phase 2: COSMOS-Net (2031-2040)} scales to 6-8 satellites in constellation, enabling true triangulation for arcminute-level localization. With three or more satellites detecting an event, time-delay measurements yield precise sky coordinates. The modular design allows satellites to be replaced as they age, ensuring sustained operations. COSMOS-Net will integrate into the broader multi-messenger alert network (GCN), providing rapid public alerts for community follow-up.
+
+\subsection*{Technical Approach}
+
+COSMOS leverages flight-proven detector technology from EIRSAT-1, GRBAlpha, HERMES, and BurstCube, using CsI or GAGG(Ce) scintillators with SiPM or CZT readout covering 10-2000 keV. By building on existing heritage rather than developing novel detectors, we reduce risk and focus innovation on constellation coordination, autonomous transient recognition, and time-delay localization algorithms. The identical-satellite approach for Twin halves design burden and enables cross-validation.
+
+Key technical challenges include GPS-based timekeeping for precise synchronization, onboard trigger algorithms, inter-satellite communication for rapid cross-validation, and constellation orbit maintenance. Our Advisory Board provides structured mentorship to address these challenges, making COSMOS a valuable training ground for future space professionals while delivering scientifically meaningful data.
 
 
 \section{Discussion}
 
-contrast both missions
+The two-mission approach provides a structured pathway for technical capability building. The CRD validates core detector and data acquisition technologies at ground level. COSMOS-Twin then demonstrates time-delay localization and constellation operations using two satellites, targeting ~10 bright GRBs to measure localization precision versus baseline distance.
 
-how CRD validates the framework
-
-CAPIBARA as a platform for student growth and development in all roles/fields
-
-why cosmos also represents CAPIBARA
-
-emphasise collaboration sustainability and expansion for 2030s
-
-CRD proves we can build, COSMOS invites you to build with us
-
+COSMOS-Net's role is providing continuous all-sky monitoring during the 2030s era of advanced gravitational wave observatories. This generates a systematic sample of high-energy transients, enabling multi-messenger correlation studies currently impossible with fragmented existing capabilities. The modular design allows incremental deployment and technology evolution as satellites age, supporting a 15-year operational timeline across distributed university partnerships.
 
 \section{Conclusion}\label{sec:conclusion}
 
-Summary and final call, why this matters
-
-This is our Conclusion.
+While leveraging proven detector technologies from EIRSAT-1, HERMES, GRBAlpha and BurstCube, CAPIBARA pursues two complementary missions to address a need to learn about the high-energy universe: CRD gives us experience and validates our approach, COSMOS-Twin demonstrates time-delay localisation, and COSMOS-Net provides systematic transient monitoring supporting flagship observatories like Einstein Telescope, LISA, THESEUS and more. We are looking forward to continuing developing these projects and engaging with the space exploration community, in part by starting our advisory council.
 
 \section*{Acknowledgments}
 
-We are grateful to the members of the CAPIBARA Collaboration for useful discussions and feedback. The authors are happy to welcome feedback and advice, please contact the corresponding author or visit our website: \href{https://capibara3.github.io/contact}{capibara3.github.io/contact}.
-
-% We thank the developers of the open-source tools used in this work. 
+We are grateful to the members of the CAPIBARA Collaboration for useful discussions and feedback. The authors encourage you to share feedback, please contact the corresponding author or visit our website: \href{https://capibara3.github.io/contact}{capibara3.github.io/contact}. We thank the developers of the open-source tools used in this work.
 
 % --- References ---
 % \bibliographystyle{plain}
